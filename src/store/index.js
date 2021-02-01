@@ -5,6 +5,7 @@ Vue.use(Vuex)
 
 import mutations from './mutations'
 import actions from './actions'
+import getters from'./getters'
 const state = {
   cartList: [],
 }
@@ -12,5 +13,6 @@ const state = {
 export default new Vuex.Store({
   state,
   mutations,
-  actions
+  actions,
+  getters
 })

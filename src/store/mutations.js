@@ -6,6 +6,7 @@ export default {
     * mutations中每个方法尽可能完成的事件比较单一
     */
   [ADD_TO_CART](state, payload) {
+    payload.checked = true;
     payload.count = 1;
     state.cartList.push(payload)
   },

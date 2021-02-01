@@ -1,7 +1,5 @@
 <template>
-<div id="aaa" ref="wrapper">
 
-</div>
 </template>
 
 <script>

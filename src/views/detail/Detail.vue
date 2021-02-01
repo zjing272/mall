@@ -5,8 +5,8 @@
                     ref="navbar"></detail-nav-bar>
     <scroll ref="scroll"
             class="wrapper"
-            :probeType="2" @scroll="scrollPosition">
-      <div>{{$store.state.cartList}}</div>
+            :probeType="2"
+            @scroll="scrollPosition">
       <detail-swiper :top-images="topImages"></detail-swiper>
       <detail-base-info :goods="goods"/>
       <detail-shop-info :shop="shop"/>
