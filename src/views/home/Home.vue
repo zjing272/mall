@@ -40,7 +40,7 @@ import BackTop from "components/content/backTop/BackTop";
 
 import {getHomeMultidata, getHomeGoods} from "network/home";
 
-import {imgListenerMixin} from "@/common/mixin";
+import {imgListenerMixin, tabControlMixin} from "@/common/mixin";
 import {BACKTOP_DISTANCE} from "@/common/const";
 
 export default {
@@ -89,23 +89,23 @@ export default {
     /*
     * 事件监听相关的方法
     * */
-    tabClick(index) {
-      switch(index) {
-        case 0:
-          this.currentType = 'pop';
-          break;
-        case 1:
-          this.currentType = 'new';
-          break;
-        case 2:
-          this.currentType = 'sell';
-          break;
-      }
-      //tabControl栏选中的商品大标题一致
-      this.$refs.tabControl1.currentIndex = index;
-      this.$refs.tabControl2.currentIndex = index;
-
-    },
+    // tabClick(index) {
+    //   switch(index) {
+    //     case 0:
+    //       this.currentType = 'pop';
+    //       break;
+    //     case 1:
+    //       this.currentType = 'new';
+    //       break;
+    //     case 2:
+    //       this.currentType = 'sell';
+    //       break;
+    //   }
+    //   //tabControl栏选中的商品大标题一致
+    //   this.$refs.tabControl1.currentIndex = index;
+    //   this.$refs.tabControl2.currentIndex = index;
+    //
+    // },
 
     //监听轮播图加载完成
     swiperImageLoad() {
@@ -151,7 +151,7 @@ export default {
       })
     }
   },
-  mixins :[imgListenerMixin]
+  mixins :[imgListenerMixin, tabControlMixin]
 }
 </script>
 

@@ -13,7 +13,8 @@ export default {
     path: String,
     activeColor: {
       type: String,
-      default: 'deeppink'
+      // default: 'deeppink'
+      default: 'rgb(255, 129, 152)'
     }
   },
   methods: {

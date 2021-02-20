@@ -22,5 +22,33 @@ export const imgListenerMixin = {
      * 方法2：当离开详情页面时取消对image的监听（$off 第二个参数：要监听的函数）
      */
     this.$EventBus.$off('itemImageLoad', this.imgItemListener)
+  },
+}
+
+export const tabControlMixin = {
+  data() {
+    return {
+      currentType: 'pop'
+    }
+  },
+  methods: {
+    tabClick(index) {
+      switch (index){
+        case 0 :
+          this.currentType = 'pop';
+          break
+        case 1 :
+          this.currentType = 'new';
+          break
+        case 2 :
+          this.currentType = 'sell';
+          break
+      }
+      //tabControl栏选中的商品大标题一致
+      if(this.$refs.tabControl1){
+        this.$refs.tabControl1.currentIndex = index;
+        this.$refs.tabControl2.currentIndex = index;
+      }
+    }
   }
 }

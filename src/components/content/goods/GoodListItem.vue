@@ -23,7 +23,10 @@ export default {
   computed: {
     showImage() {
       //首页的goods和详情页的recommend image数据目录不一样
-      return this.goodsItem.image || this.goodsItem.show.img
+      return this.goodsItem.img || this.goodsItem.image || this.goodsItem.show.img
+      //为什么不能改变位置？
+      // return this.goodsItem.image || this.goodsItem.show.img || this.goodsItem.img
+
     }
   },
   methods: {
