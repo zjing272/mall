@@ -1,7 +1,7 @@
 <template>
   <div class="bottom-bar">
     <div class="checked-content">
-      <check-button class="check-button" @click="checkBtnClick" v-model="isSelectAll"/>
+      <check-button class="check-button" @click.native="checkBtnClick" v-model="isSelectAll" :is-checked="isSelectAll"/>
       <span>全选</span>
       <div class="total">合计:￥{{totalPrice}}</div>
     </div>

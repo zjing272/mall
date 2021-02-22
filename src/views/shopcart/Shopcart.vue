@@ -31,7 +31,7 @@ export default {
     ...mapGetters(['allCount'])
   },
   mounted() {
-    // console.log(this.$refs.scroll.scroll)
+    console.log(this.$refs.scroll)
   }
 }
 </script>
