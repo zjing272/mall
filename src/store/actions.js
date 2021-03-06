@@ -8,12 +8,18 @@ export default {
     * --如果没有符合条件的元素，返回undefined
     */
     //先判断cartList中有没有点击的商品
-    let oldProduct = state.cartList.find(item => item.iid === payload.iid)
-    //有则count+1;无则加入新商品
-    if(oldProduct) {
-      commit(ADD_COUNTER, oldProduct)
-    }else {
-      commit(ADD_TO_CART, payload)
-    }
+    return new Promise((resolve) => {
+      let oldProduct = state.cartList.find(item => item.iid === payload.iid)
+      //有则count+1;无则加入新商品
+      if(oldProduct) {
+        commit(ADD_COUNTER, oldProduct);
+        resolve('当前的商品数量 +1')
+      }else {
+        commit(ADD_TO_CART, payload)
+        resolve('加入购物车成功！')
+      }
+    })
+
   }
+
 }
